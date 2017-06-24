@@ -47,6 +47,9 @@
       "/public/",
       "/example/"
     ],
+    "testMatch": [
+      "**/?(*.)test.js"
+    ],
     "roots": [
       "__tests__"
     ]
