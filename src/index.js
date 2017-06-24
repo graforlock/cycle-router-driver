@@ -1,37 +1,12 @@
-const assert = require('assert');
-
-const UniversalRouter = require('universal-router');
-const { createBrowserHistory, createMemoryHistory } = require('history');
-const { adapt } = require('@cycle/run/lib/adapt');
-const xs = require('xstream').default;
+const assert = require('assert'),
+    { adapt } = require('@cycle/run/lib/adapt'),
+    { createBrowserHistory, createMemoryHistory } = require('history'),
+    xs = require('xstream').default,
+    intent = require('./intent'),
+    historyIntent = require('./core/historyIntent'),
+    UniversalRouter = require('universal-router');
 
 let history = null, unlisten = null;
-
-const intent = {
-    GO: 'GO',
-    GO_BACK: 'GO_BACK',
-    GO_FORWARD: 'GO_FORWARD',
-    PUSH: 'PUSH',
-    REPLACE: 'REPLACE'
-};
-
-const onNextState = value => {
-    const intentMap = {
-        [intent.GO]: payload => history.go(value.payload),
-        [intent.GO_BACK]: () => history.goBack(),
-        [intent.GO_FORWARD]: () => history.goForward(),
-        [intent.PUSH]: payload => history.push(...payload),
-        [intent.REPLACE]: payload => history.replace(...payload)
-    };
-
-    const handler = intentMap[value.type];
-    if (handler) {
-        handler(value.payload);
-        return;
-    }
-
-    history.push(value);
-};
 
 module.exports = {
     go: payload => ({ type: intent.GO, payload }),
@@ -49,10 +24,12 @@ module.exports = {
             'Cycle.js router Error: `routes` cannot be undefined.'
         );
 
-        const uRouter = new UniversalRouter(routes);
         history = typeof window !== 'undefined'
             ? createBrowserHistory(options)
             : createMemoryHistory(options);
+
+        const uRouter = new UniversalRouter(routes),
+            onNextState = historyIntent(history);
 
         function routerDriver(input$) {
             input$.addListener({
@@ -63,7 +40,7 @@ module.exports = {
                 complete: () => {}
             });
 
-            const incoming$ = xs.create({
+            const output$ = xs.create({
                 start: listener => {
                     uRouter
                         .resolve(url || history.location.pathname)
@@ -87,8 +64,19 @@ module.exports = {
                     }
                 }
             });
-            return adapt(incoming$);
+            return adapt(output$);
         }
         return routerDriver;
+    },
+    mockRouterSource: function mockRouterSource(routes, { url }) {
+        const output$ = xs.create({
+            start: listener => {
+                new UniversalRouter(routes)
+                    .resolve(url)
+                    .then(vtree => listener.shamefullySendNext(vtree));
+            },
+            stop: () => {}
+        });
+        return adapt(output$);
     }
 };

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`uRouter unit tests exports a makeRouterDriver driver function 1`] = `[Function]`;
+
+exports[`uRouter unit tests go(n) 1`] = `
+Object {
+  "payload": 1,
+  "type": "GO",
+}
+`;
+
+exports[`uRouter unit tests goBack() 1`] = `
+Object {
+  "type": "GO_BACK",
+}
+`;
+
+exports[`uRouter unit tests goForward() 1`] = `
+Object {
+  "type": "GO_FORWARD",
+}
+`;
+
+exports[`uRouter unit tests matches current API snapshot 1`] = `
+Object {
+  "default": Object {
+    "go": [Function],
+    "goBack": [Function],
+    "goForward": [Function],
+    "makeRouterDriver": [Function],
+    "mockRouterSource": [Function],
+    "push": [Function],
+    "replace": [Function],
+  },
+  "go": [Function],
+  "goBack": [Function],
+  "goForward": [Function],
+  "makeRouterDriver": [Function],
+  "mockRouterSource": [Function],
+  "push": [Function],
+  "replace": [Function],
+}
+`;
+
+exports[`uRouter unit tests push(..any) 1`] = `
+Object {
+  "payload": Array [
+    "/test",
+  ],
+  "type": "PUSH",
+}
+`;
+
+exports[`uRouter unit tests replace(..any) 1`] = `
+Object {
+  "payload": Array [
+    "/test",
+  ],
+  "type": "REPLACE",
+}
+`;
