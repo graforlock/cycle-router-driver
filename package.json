@@ -40,15 +40,15 @@
     "build": "node .scripts/build.js"
   },
   "jest": {
+     "testMatch": [
+      "<rootDir>/__tests__/*.test.js"
+    ],
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/.scripts/",
       "/build/",
       "/public/",
       "/example/"
-    ],
-    "testMatch": [
-      "**/?(*.)test.js"
     ],
     "roots": [
       "__tests__"
