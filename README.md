@@ -16,8 +16,8 @@ Routes is an object compatible with `universal-router` API.
 
 Options is an additional object of options that may include the following properties:
 
-- ##### `url` : It's the initial router url. Helpful for `nodejs` environment while rendering the app as a result of receiving `req.url`.
-- ##### `historyOptions` : Initial configuration object passed to history object. It matches `history` library API for `createBrowserHistory` and `createMemoryHistory`.
+- *`url`* : It's the initial router url. Helpful for `nodejs` environment while rendering the app as a result of receiving `req.url`.
+- *`historyOptions`* : Initial configuration object passed to history object. It matches `history` library API for `createBrowserHistory` and `createMemoryHistory`.
 
 ***
 
