@@ -13,12 +13,12 @@ Check out example in the repository for the complete, SSR/isomorphic routing exa
 Creates a router driver that should eventually return virtual dom (or any) component given route matches the current context. There is an optional `url` argument to the function due to passing request url in `express/nodejs` and any other non-browser environment (using `createMemoryHistory`).
 
 
- #### a). `routes`
+ #### a). [`routes`]()
 
 Routes is an object compatible with `universal-router` API.
 
 
-#### b).  `options`
+#### b).  [`options`]()
 
 Options is an additional object of options that may include the following properties:
 
