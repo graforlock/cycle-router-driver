@@ -6,4 +6,4 @@ install:
  - npm install
 script:
  - npm run build
- - jest /home/travis/build/graforlock/cycle-router-driver/__tests__/index.test.js
+ - node node_modules/jest/bin/jest.js
