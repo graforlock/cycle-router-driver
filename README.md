@@ -49,4 +49,8 @@ Accepts an object of the next, desirable route state to push. Matches `history` 
 
 Accepts an object of the next, desirable route state to replace. Matches `history` API.Internally, this returns `{ type: intent.REPLACE, payload }` where payload is the `...any` argument. Just as `push`, it allows for manual, configurable sense of changes.
 
+***
 
+### Example use:
+
+Check out example in the repository, for the complete, SSR/isomorphic routing example.
