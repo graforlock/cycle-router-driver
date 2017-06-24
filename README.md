@@ -2,11 +2,11 @@
 
 Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-box both server and client side.
 
-### Usage:
+## Usage:
 
 Check out example in the repository, for the complete, SSR/isomorphic routing example.
 
-### API:
+## API Documentation:
 
 1. ### `makeRouterDriver(routes, [options])`
 
