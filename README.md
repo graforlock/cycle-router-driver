@@ -6,9 +6,11 @@ Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-
 
 Check out example in the repository, for the complete, SSR/isomorphic routing example.
 
+***
+
 ## API Documentation:
 
-1. ### `makeRouterDriver(routes, [options])`
+### `makeRouterDriver(routes, [options])`
 
 Creates a router driver that should eventually return virtual dom (or any) component given route matches the current context. There is an optional `url` argument to the function due to passing request url in `express/nodejs` and any other non-browser environment (using `createMemoryHistory`).
 
@@ -27,30 +29,30 @@ Options is an additional object of options that may include the following proper
 
 ***
 
-2. ### `go(n)`
+### `go(n)`
 
 Accepts a `number` of steps to go from this point in the history. Internally, this returns `{ type: intent.GO, payload }` where payload is the `n` argument.
 
 ***
 
-3. ### `goBack()`
+### `goBack()`
 
 Goes back in history, doesn't require an argument. Internally, this returns `{ type: intent.GO_BACK }` with no payload.
 
 ***
 
-4. ### `goForward()`
+### `goForward()`
 
 Goes forward in history, doesn't require an argument. Internally, this returns `{ type: intent.GO_FORWARD }` with no payload.
 
 ***
 
-5. ### `push(...any)`
+### `push(...any)`
 
 Accepts an object of the next, desirable route state to push. Matches `history` API.Internally, this returns `{ type: intent.PUSH, payload }` where payload is the `...any` argument. Heplful for manual, controlled tinkering with history API.
 
 ***
 
-6. ### `replace(...any)`
+### `replace(...any)`
 
 Accepts an object of the next, desirable route state to replace. Matches `history` API.Internally, this returns `{ type: intent.REPLACE, payload }` where payload is the `...any` argument. Just as `push`, it allows for manual, configurable sense of changes.
