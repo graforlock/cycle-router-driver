@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/graforlock/cycle-router-driver.svg?branch=master)](https://travis-ci.org/graforlock/cycle-router-driver)
+
 Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-box both server and client side.
 
 #### Example usage:
