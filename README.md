@@ -6,7 +6,7 @@ Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-
 
 Check out example in the repository for the complete, SSR/isomorphic routing example.
 
-## API Documentation:
+# API Documentation:
 
 ### `makeRouterDriver(routes, [options])`
 
