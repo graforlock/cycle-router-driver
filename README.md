@@ -2,6 +2,12 @@
 
 Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-box both server and client side.
 
+### Usage:
+
+Check out example in the repository, for the complete, SSR/isomorphic routing example.
+
+### API:
+
 1. ### `makeRouterDriver(routes, [options])`
 
 Creates a router driver that should eventually return virtual dom (or any) component given route matches the current context. There is an optional `url` argument to the function due to passing request url in `express/nodejs` and any other non-browser environment (using `createMemoryHistory`).
@@ -48,9 +54,3 @@ Accepts an object of the next, desirable route state to push. Matches `history` 
 6. ### `replace(...any)`
 
 Accepts an object of the next, desirable route state to replace. Matches `history` API.Internally, this returns `{ type: intent.REPLACE, payload }` where payload is the `...any` argument. Just as `push`, it allows for manual, configurable sense of changes.
-
-***
-
-### Example use:
-
-Check out example in the repository, for the complete, SSR/isomorphic routing example.
