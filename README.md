@@ -10,7 +10,7 @@ Check out example in the repository for the complete, SSR/isomorphic routing [ex
 
 ### [`makeRouterDriver(routes, [options])`](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L43)
 
-Creates a router driver that should eventually return virtual dom (or any) component given route matches the current context. There is an optional `options` argument object to the function. It may be used for additional history config or passing request url in `express/nodejs` and any other non-browser environment (using `createMemoryHistory`).
+Creates a router driver that should eventually return virtual dom (or any) component given route matches the current context. There is an optional `options` argument object to the function. It may be used for additional history config or passing request url in other non-browser environment (using `createMemoryHistory`).
 
 
  #### [`routes`](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L44)
