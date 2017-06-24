@@ -1,8 +1,13 @@
+general:
+  branches:
+    only:
+      - master 
+
 machine:
   node:
     version: 8.1.0
   
-  dependencies:
-    override:
-      - npm install 
+dependencies:
+  override:
+    - npm install 
 
