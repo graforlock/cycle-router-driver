@@ -1,5 +1,3 @@
-# cycle-router-driver
-
 Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-box both server and client side.
 
 #### Example usage:
