@@ -4,6 +4,8 @@ Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-
 
 Check out example in the repository for the complete, SSR/isomorphic routing [example](https://github.com/graforlock/cycle-router-driver/tree/master/example).
 
+***
+
 ### [`makeRouterDriver(routes, [options])`](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L43)
 
 Creates a router driver that should eventually return virtual dom (or any) component given route matches the current context. There is an optional `url` argument to the function due to passing request url in `express/nodejs` and any other non-browser environment (using `createMemoryHistory`).
