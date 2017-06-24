@@ -47,7 +47,7 @@
       "/public/",
       "/example/"
     ],
-    "testPathDirs": [
+    "roots": [
       "__tests__"
     ]
   }
