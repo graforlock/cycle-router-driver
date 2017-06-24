@@ -1,19 +1,21 @@
-const assert = require('assert'),
-    { adapt } = require('@cycle/run/lib/adapt'),
-    { createBrowserHistory, createMemoryHistory } = require('history'),
-    xs = require('xstream').default,
-    intent = require('./intent'),
-    historyIntent = require('./core/historyIntent'),
-    UniversalRouter = require('universal-router');
+const assert = require('assert');
+
+const { adapt } = require('@cycle/run/lib/adapt');
+const { createBrowserHistory, createMemoryHistory } = require('history');
+const historyIntent = require('./historyIntent');
+const intents = require('./intents');
+const UniversalRouter = require('universal-router');
+const xs = require('xstream').default;
+
 
 let history = null, unlisten = null;
 
 module.exports = {
-    go: payload => ({ type: intent.GO, payload }),
-    goBack: () => ({ type: intent.GO_BACK }),
-    goForward: () => ({ type: intent.GO_FORWARD }),
-    push: (...payload) => ({ type: intent.PUSH, payload }),
-    replace: (...payload) => ({ type: intent.REPLACE, payload }),
+    go: payload => ({ type: intents.GO, payload }),
+    goBack: () => ({ type: intents.GO_BACK }),
+    goForward: () => ({ type: intents.GO_FORWARD }),
+    push: (...payload) => ({ type: intents.PUSH, payload }),
+    replace: (...payload) => ({ type: intents.REPLACE, payload }),
 
     makeRouterDriver: function makeRouterDriver(
         routes,
