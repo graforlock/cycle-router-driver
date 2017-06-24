@@ -4,7 +4,7 @@ Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-
 
 #### Example usage:
 
-Check out example in the repository for the complete, SSR/isomorphic routing example.
+Check out example in the repository for the complete, SSR/isomorphic routing [example](https://github.com/graforlock/cycle-router-driver/tree/master/example).
 
 # API Documentation:
 
