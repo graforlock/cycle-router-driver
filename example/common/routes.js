@@ -1,26 +1,27 @@
-const {a, div, h1, section} = require('@cycle/dom');
+const { a, div, h1, section, p } = require('@cycle/dom');
 
-const appSection = headerText => 
-  section('.layout', 
-    [
-      h1(headerText),
-      a('.menu-link', {attrs: {href: '/about'}}, 'about'),
-      a('.menu-link', {attrs: {href: '/about/param'}}, 'about/param'),
-      a('.menu-link--back', {attrs: {href: ''}}, '<- go back')
-    ]
-  );
+const appLayout = (headerText, ...contents) =>
+    section('.layout', [
+        h1(headerText),
+        p(a('.menu-link', { attrs: { href: '/about' } }, '.push("/about")')),
+        p(a('.menu-link', { attrs: { href: '/about/param' } }, '.push("/about/param")')),
+        p(a('.menu-link--back', { attrs: { href: '' } }, '.goBack()')),
+        p(a('.menu-link--forward', { attrs: { href: '' } }, '.goForward()')),
+        div(contents)
+    ]);
 
 module.exports = [
-  {
-    path: '/',
-    action: () => appSection('Home yo!')
-  },
-  {
-    path: '/about',
-    action: () => appSection('About yo!')
-  },
-  {
-    path: '/about/:param',
-    action: ({params: {param}}) => appSection(`About yo ${param}!`)
-  }
+    {
+        path: '/',
+        action: () => appLayout('Home yo!', p('lorem ipsum....'))
+    },
+    {
+        path: '/about',
+        action: () => appLayout('About yo!', p('lorem ipsum....'))
+    },
+    {
+        path: '/about/:param',
+        action: ({ params: { param } }) =>
+            appLayout(`About yo ${param}!`, p('lorem ipsum....'))
+    }
 ];
