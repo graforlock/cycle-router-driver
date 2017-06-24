@@ -16,7 +16,7 @@ const compiler = webpack({
     './example/client/index.js'
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: './public/'
   },
   module: {

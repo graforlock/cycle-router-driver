@@ -2,7 +2,7 @@
   "name": "urouter",
   "version": "0.1.0",
   "private": true,
-  "main": "./src/index.js",
+  "main": "./public/index.js",
   "devDependencies": {
     "@cycle/time": "^0.8.0",
     "babel-core": "^6.17.0",
