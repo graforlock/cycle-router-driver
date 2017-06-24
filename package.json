@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "node .scripts/start.js",
-    "test": "jest -- --runInBand --testPathPattern .*__tests__/.*",
+    "test": "jest",
     "test:acceptance": "./node_modules/.bin/cucumber-js",
     "build": "node .scripts/build.js"
   },
@@ -46,6 +46,9 @@
       "/build/",
       "/public/",
       "/example/"
+    ],
+    "testPathDirs": [
+      "__tests__"
     ]
   }
 }
