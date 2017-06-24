@@ -1,7 +1,6 @@
 {
   "name": "cycle-router-driver",
   "version": "0.1.0",
-  "private": true,
   "main": "./public/index.js",
   "devDependencies": {
     "@cycle/time": "^0.8.0",
