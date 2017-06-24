@@ -1,5 +1,5 @@
 {
-  "name": "urouter",
+  "name": "cycle-router-driver",
   "version": "0.1.0",
   "private": true,
   "main": "./public/index.js",
