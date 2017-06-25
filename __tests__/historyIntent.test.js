@@ -1,7 +1,8 @@
+import { createMemoryHistory } from 'history';
+import xs from 'xstream';
+
 import historyIntent from '../src/historyIntent';
 import intents from '../src/intents';
-
-import { createMemoryHistory } from 'history';
 
 describe('historyIntent', () => {
     const history = createMemoryHistory(), onNextState = historyIntent(history);
@@ -45,10 +46,21 @@ describe('historyIntent', () => {
         expect(spy).toHaveBeenCalledWith(expected);
     });
 
+    it('gets called correctly with intents.REDIRECT', () => {
+        const spy = jest.spyOn(history, 'push');
+        const redirect$ = xs.of({ type: intents.REDIRECT, payload: '/' })
+            .map(({payload}) => payload)
+        
+        redirect$.addListener({ next: onNextState });
+
+        expect(spy).toHaveBeenCalled();
+        expect(spy).toHaveBeenCalledWith('/');
+    });
+
     it('gets called correctly with intents.REPLACE', () => {
         const expected = ['/home', { some: 'state' }];
         const spy = jest.spyOn(history, 'replace');
-
+        
         onNextState({ type: intents.REPLACE, payload: expected });
 
         expect(spy).toHaveBeenCalled();

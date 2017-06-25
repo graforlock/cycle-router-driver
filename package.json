@@ -34,7 +34,7 @@
     "xstream": "^10.8.0"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --silent",
     "test:acceptance": "npm run build-example && ./node_modules/.bin/cucumber-js",
     "build-example": "node .scripts/build-example.js"
   },

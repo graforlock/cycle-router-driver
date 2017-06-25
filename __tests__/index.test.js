@@ -43,28 +43,41 @@ describe('uRouter', () => {
     });
 
     describe('functional tests', () => {
+        function app(sources) {
+            const vtree$ = sources.Router;
+
+            return {
+                DOM: vtree$
+            };
+        }
         const routes = [
             {
                 path: '/:param',
                 action: ({ params: { param } }) => p(`Hello ${param}.`)
             }
         ];
+
         describe('makeRouterDriver', () => {
             it('renders a correct markup for a given route', () => {
-                function app(sources) {
-                    const vtree$ = sources.Router;
-
-                    return {
-                        DOM: vtree$
-                    };
-                }
-
                 run(app, {
                     DOM: makeHTMLDriver(html => {
                         expect(html).toEqual('<p>Hello World.</p>');
                     }),
                     Router: uRouter.makeRouterDriver(routes, { url: '/World' })
                 });
+            });
+
+            it('throws an exception on non-existent route', () => {
+                try {
+                    run(app, {
+                        DOM: makeHTMLDriver(html => {
+                            expect(html).toEqual('<p>Hello World.</p>');
+                        }),
+                        Router: uRouter.makeRouterDriver(routes, { url: '/bad/route' })
+                    });
+                } catch(err) {
+                    expect(err.message).toBe('Error: Page not found');
+                }
             });
         });
 
@@ -76,13 +89,6 @@ describe('uRouter', () => {
                     url: '/World'
                 });
 
-                function app(sources) {
-                    const vtree$ = sources.Router.map(vtree => vtree);
-
-                    return {
-                        DOM: vtree$
-                    };
-                }
                 const text$ = app({ Router }).DOM.map(vtree => vtree.text);
 
                 Time.assertEqual(
