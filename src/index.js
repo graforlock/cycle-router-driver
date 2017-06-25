@@ -15,6 +15,7 @@ module.exports = {
     goBack: () => ({ type: intents.GO_BACK }),
     goForward: () => ({ type: intents.GO_FORWARD }),
     push: (...payload) => ({ type: intents.PUSH, payload }),
+    redirect: payload => ({ type: intents.REDIRECT, payload }),
     replace: (...payload) => ({ type: intents.REPLACE, payload }),
 
     makeRouterDriver: function makeRouterDriver(
@@ -37,7 +38,7 @@ module.exports = {
             input$.addListener({
                 next: onNextState,
                 error: error => {
-                    assert.error(`Cycle.js router Error: ${error}.`);
+                    assert.fail(`Cycle.js router Error: ${error}.`);
                 },
                 complete: () => {}
             });

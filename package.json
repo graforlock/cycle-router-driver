@@ -38,7 +38,7 @@
     "build-example": "node .scripts/build-example.js"
   },
   "jest": {
-     "testMatch": [
+    "testMatch": [
       "<rootDir>/__tests__/*.test.js"
     ],
     "testPathIgnorePatterns": [

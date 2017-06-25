@@ -30,6 +30,7 @@ Object {
     "makeRouterDriver": [Function],
     "mockRouterSource": [Function],
     "push": [Function],
+    "redirect": [Function],
     "replace": [Function],
   },
   "go": [Function],
@@ -38,6 +39,7 @@ Object {
   "makeRouterDriver": [Function],
   "mockRouterSource": [Function],
   "push": [Function],
+  "redirect": [Function],
   "replace": [Function],
 }
 `;
