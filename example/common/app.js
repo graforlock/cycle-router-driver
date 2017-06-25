@@ -1,6 +1,5 @@
 const xs = require('xstream').default;
-const { go, goBack, goForward, push, redirect } = require('../../src/index');
-const intents = require('../../src/intents');
+const { go, goBack, goForward, intents, push, redirect } = require('../../src/index');
 
 module.exports = function app(sources) {
     const click$ = sources.DOM.select('a').events('click');
