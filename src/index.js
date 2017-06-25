@@ -18,6 +18,8 @@ module.exports = {
     redirect: payload => ({ type: intents.REDIRECT, payload }),
     replace: (...payload) => ({ type: intents.REPLACE, payload }),
 
+    intents: intents,
+
     makeRouterDriver: function makeRouterDriver(
         routes,
         { url = false, options = {} } = {}
