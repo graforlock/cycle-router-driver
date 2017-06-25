@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/graforlock/cycle-router-driver.svg?style=svg)](https://circleci.com/gh/graforlock/cycle-router-driver)
+[![CircleCI](https://circleci.com/gh/graforlock/cycle-router-driver.svg?style=svg)](https://circleci.com/gh/graforlock/cycle-router-driver) [![npm version](https://badge.fury.io/js/cycle-router-driver.svg)](https://badge.fury.io/js/cycle-router-driver)
+
 
 Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-box both server and client side.
 
