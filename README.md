@@ -8,9 +8,7 @@ Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-
 
 Check out example in the repository for the complete, SSR/isomorphic routing [example](https://github.com/graforlock/cycle-router-driver/tree/master/example).
 
-#### Note: 
-
-In real life scenario, a typical route workflow will look more like this, exposing DOM (and more) in the `app/main` component:
+In real life scenario, a typical route workflow will look more like this, with the ability to fetch and render route given data. This along with exposing DOM (and more) in the component:
 
 ```javascript
 // common/aboutRoute.js
