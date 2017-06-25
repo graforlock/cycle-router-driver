@@ -8,6 +8,38 @@ Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-
 
 Check out example in the repository for the complete, SSR/isomorphic routing [example](https://github.com/graforlock/cycle-router-driver/tree/master/example).
 
+#### NOTE: 
+
+In real life scenario, you would normally have route components that look more like this, exposing DOM (and more) in the `app/main` component:
+
+```javascript
+// common/aboutComponent.js
+
+async function aboutComponent({params: {user}}) {
+    // (...)
+    // do something with user parameter,
+    // like `await` for initial user data,
+    // then (maybe) put it in the stream.
+    // (...)
+    return sources => {
+        const vtree$ = user$.map(user =>
+            div('.users', [
+              div('.user-details', [
+                  h1('.user-name', user.name),
+                  h4('.user-email', user.email),
+                  a('.user-website', {href: user.website}, user.website)
+              ])
+        );
+
+        return {
+            DOM: vtree$
+        }
+    }
+}
+
+```
+So, instead of the returned `vtree` value like in the `common/app.js` example, that'd be in fact a component function of sorts, exposing, for instance, DOM stream.
+
 ***
 
 ### [makeRouterDriver(routes, [options])](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L43)
