@@ -10,8 +10,9 @@ Check out example in the repository for the complete, SSR/isomorphic routing [ex
 
 In real life scenario, a typical route workflow will look more like this, with the ability to fetch and render route server-side, given data. This along with exposing DOM (and more) in the component:
 
+`common/aboutRoute.js`
+
 ```javascript
-// common/aboutRoute.js
 
 async function aboutRoute({params: {user}}) {
     const userData = await fetch(api.USER_API)
@@ -37,9 +38,9 @@ async function aboutRoute({params: {user}}) {
     }
 }
 
-//common/routes.js
+`common/routes.js`
 
-
+```javascript
 const routes = [
     {
         path: '/about/:user',
