@@ -13,15 +13,15 @@ Check out example in the repository for the complete, SSR/isomorphic routing [ex
 In real life scenario, you would normally have route components that look more like this, exposing DOM (and more) in the `app/main` component:
 
 ```javascript
-// common/aboutComponent.js
+// common/aboutRoute.js
 
-async function aboutComponent({params: {user}}) {
+async function aboutRoute({params: {user}}) {
     // (...)
     // do something with user parameter,
     // like `await` for initial user data,
     // then (maybe) put it in the stream.
     // (...)
-    return sources => {
+    return function aboutComponent(sources) {
         const vtree$ = user$.map(user =>
             div('.users', [
               div('.user-details', [
