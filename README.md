@@ -37,7 +37,7 @@ Utility function that mocks the router source for testing purposes. It currently
 
 ### [intents](https://github.com/graforlock/cycle-router-driver/blob/master/src/intents/index.js)
 
-Those export all available intents that are used to interact with `history` API. Possible choices are:
+Object that exports all available intents that are used to interact with `history` API. All possible choices are:
 ```
 GO
 GO_BACK
