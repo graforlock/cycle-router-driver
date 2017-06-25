@@ -29,6 +29,12 @@ Options is an additional object of options that may include the following proper
 
 ***
 
+### [mockRouterSource(routes, url)](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L43)
+
+Utility function that mocks the router source for testing purposes. It currently is mandatory to provide url as an object `{ url: url}`. This behaviour may change in future.
+
+***
+
 ### [go(n)](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L37)
 
 Accepts a `number` of steps to go from this point in the history. Internally, this returns `{ type: intent.GO, payload }` where payload is the `n` argument.
