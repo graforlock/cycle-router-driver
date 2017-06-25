@@ -1,5 +1,5 @@
 const xs = require('xstream').default;
-const { block, go, goBack, goForward, push } = require('../../src/index');
+const { go, goBack, goForward, push, redirect } = require('../../src/index');
 const intents = require('../../src/intents');
 
 module.exports = function app(sources) {

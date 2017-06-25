@@ -51,6 +51,12 @@ Accepts an object of the next, desirable route state to push. Matches `history` 
 
 ***
 
+### [redirect(url)](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L41)
+
+Accepts a string of the new location. Under the hood, it would perform a regular history `push`. Returns `{ type: intent.REDIRECT, payload }`. 
+
+***
+
 ### [replace(...any)](https://github.com/graforlock/cycle-router-driver/blob/master/src/index.js#L41)
 
 Accepts an object of the next, desirable route state to replace. Matches `history` API.Internally, this returns `{ type: intent.REPLACE, payload }` where payload is the `...any` argument. Just as `push`, it allows for manual, configurable sense of changes.
