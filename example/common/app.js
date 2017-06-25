@@ -1,4 +1,5 @@
 const xs = require('xstream').default;
+const appLayout = require('./appLayout');
 const { go, goBack, goForward, intents, push, redirect } = require('../../src/index');
 
 module.exports = function app(sources) {
@@ -22,7 +23,10 @@ module.exports = function app(sources) {
 
     const vtree$ = sources.Router
         .filter(router => router.type !== intents.REDIRECT)
-        .map(vtree => vtree);
+        .map(component => component(sources).DOM
+                .map(appLayout)
+        )
+        .flatten();
 
     return {
         DOM: vtree$,

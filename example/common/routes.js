@@ -1,20 +1,22 @@
-const layout = require('./layout');
-const { p } = require('@cycle/dom');
 const { redirect } = require('../../src/index');
+
+const homeComponent = require('./components/home');
+const aboutComponent = require('./components/about');
+const aboutParamComponent = require('./components/aboutParam');
+const notFoundComponent = require('./components/notFound');
 
 module.exports = [
     {
         path: '/',
-        action: () => layout('Home yo!', p('lorem ipsum....'))
+        action: homeComponent
     },
     {
         path: '/about',
-        action: () => layout('About yo!', p('lorem ipsum....'))
-    },
+        action: aboutComponent
+    }, 
     {
         path: '/about/:param',
-        action: ({ params: { param } }) =>
-            layout(`About yo ${param}!`, p('lorem ipsum....'))
+        action: aboutParamComponent
     },
     {
         path: '/redirect',
@@ -22,6 +24,6 @@ module.exports = [
     },
     {
         path: '/*',
-        action: () => layout('404 yo!', p('lorem ipsum....'))
+        action: notFoundComponent
     }
 ];
