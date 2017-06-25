@@ -1,7 +1,7 @@
 {
   "name": "cycle-router-driver",
-  "version": "0.1.1",
-  "main": "./public/index.js",
+  "version": "0.1.2",
+  "main": "./src/index.js",
   "devDependencies": {
     "@cycle/time": "^0.8.0",
     "babel-core": "^6.17.0",
