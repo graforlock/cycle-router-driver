@@ -13,7 +13,7 @@ mkdirp.sync(buildPath)
 
 const compiler = webpack({
   entry: [
-    './example/client/index.js'
+    './src/index.js'
   ],
   output: {
     filename: 'index.js',
@@ -32,8 +32,7 @@ const compiler = webpack({
     ]
   },
   plugins: [
-    new ProgressBarPlugin(),
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
+    new ProgressBarPlugin()
   ]
 })
 
