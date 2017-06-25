@@ -37,6 +37,16 @@ async function aboutRoute({params: {user}}) {
     }
 }
 
+//common/routes.js
+
+
+const routes = [
+    {
+        path: '/about/:user',
+        action: aboutRoute
+    }
+];
+
 ```
 The above `async/await` is cheap to wrap in `try/catch` and render a 404 route, or a redirect instead.
 
