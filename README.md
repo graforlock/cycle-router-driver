@@ -29,7 +29,7 @@ async function aboutComponent({params: {user}}) {
                   h4('.user-email', user.email),
                   a('.user-website', {href: user.website}, user.website)
               ])
-        );
+            );
 
         return {
             DOM: vtree$
