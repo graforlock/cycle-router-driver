@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/graforlock/cycle-router-driver.svg?style=svg)](https://circleci.com/gh/graforlock/cycle-router-driver) [![npm version](https://badge.fury.io/js/cycle-router-driver.svg)](https://badge.fury.io/js/cycle-router-driver) [![codecov](https://codecov.io/gh/graforlock/cycle-router-driver/branch/master/graph/badge.svg)](https://codecov.io/gh/graforlock/cycle-router-driver)
-
+[![stability](https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square)](https://nodejs.org/api/documentation.html#documentation_stability_index)
 
 
 Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-box both server and client side.
