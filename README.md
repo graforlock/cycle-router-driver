@@ -10,18 +10,20 @@ Check out example in the repository for the complete, SSR/isomorphic routing [ex
 
 #### Note: 
 
-In real life scenario, you would normally have route components that look more like this, exposing DOM (and more) in the `app/main` component:
+In real life scenario, a typical route workflow will look more like this, exposing DOM (and more) in the `app/main` component:
 
 ```javascript
 // common/aboutRoute.js
 
 async function aboutRoute({params: {user}}) {
-    // (...)
-    // do something with user parameter,
-    // like `await` for initial user data,
-    // then (maybe) put it in the stream.
-    // (...)
+    const userData = await fetch(api.USER_API)
+        .then(user => user.json());
+    
     return function aboutComponent(sources) {
+        const user$ = xs.of(userData);
+        // ideally, you'd do something more with user data
+        // (...)
+   
         const vtree$ = user$.map(user =>
             div('.users', [
               div('.user-details', [
@@ -29,7 +31,7 @@ async function aboutRoute({params: {user}}) {
                   h4('.user-email', user.email),
                   a('.user-website', {href: user.website}, user.website)
               ])
-            );
+            ]);
 
         return {
             DOM: vtree$
@@ -38,9 +40,7 @@ async function aboutRoute({params: {user}}) {
 }
 
 ```
-So, instead of the returned `vtree` value like in the [`common/app.js`](https://github.com/graforlock/cycle-router-driver/blob/master/example/common/app.js#L25) example, that'd be in fact a `component` function of sorts, exposing, for instance, DOM stream. 
-
-Soon, there will be more examples to display correct isolated route architecture.
+The above is cheap to wrap in `try/catch` and render a 404 route, or a redirect instead.
 
 ***
 
