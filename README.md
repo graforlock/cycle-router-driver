@@ -8,7 +8,7 @@ Cycle.js routing solution based on awesome `universal-router`. Works out-of-the-
 
 Check out example in the repository for the complete, SSR/isomorphic routing [example](https://github.com/graforlock/cycle-router-driver/tree/master/example).
 
-#### NOTE: 
+#### Note: 
 
 In real life scenario, you would normally have route components that look more like this, exposing DOM (and more) in the `app/main` component:
 
@@ -38,7 +38,9 @@ async function aboutComponent({params: {user}}) {
 }
 
 ```
-So, instead of the returned `vtree` value like in the `common/app.js` example, that'd be in fact a component function of sorts, exposing, for instance, DOM stream.
+So, instead of the returned `vtree` value like in the `common/app.js` example, that'd be in fact a component function of sorts, exposing, for instance, DOM stream. 
+
+Soon, there will be more examples to display correct isolated route architecture.
 
 ***
 
