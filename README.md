@@ -37,6 +37,7 @@ async function aboutRoute({params: {user}}) {
         }
     }
 }
+```
 
 `common/routes.js`
 
