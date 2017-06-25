@@ -40,7 +40,7 @@ async function aboutRoute({params: {user}}) {
 }
 
 ```
-The above is cheap to wrap in `try/catch` and render a 404 route, or a redirect instead.
+The above `async/await` is cheap to wrap in `try/catch` and render a 404 route, or a redirect instead.
 
 ***
 
