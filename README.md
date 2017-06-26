@@ -20,8 +20,6 @@ async function aboutRoute({params: {user}}) {
     
     return function aboutComponent(sources) {
         const user$ = xs.of(userData);
-        // ideally, you'd do something more with user data
-        // (...)
    
         const vtree$ = user$.map(user =>
             div('.users', [
