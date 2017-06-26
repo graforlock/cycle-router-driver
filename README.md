@@ -15,7 +15,7 @@ In real life scenario, a typical route workflow will look more like this, with t
 ```javascript
 
 async function aboutRoute({params: {user}}) {
-    const userData = await fetch(api.USER_API)
+    const userData = await fetch(`${api.USER_API}/${user}`)
         .then(user => user.json());
     
     return function aboutComponent(sources) {
